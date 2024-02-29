@@ -10,7 +10,8 @@ const createWindow = () => {
     });
     win.loadFile('index.html');
 };
-app.whenReady().then(() => {
+app.on('ready', () => {
+    // app.whenReady().then(() => {
     createWindow();
     app.on('activate', () => {
         if (BrowserWindow.getAllWindows().length === 0) createWindow()
@@ -18,6 +19,6 @@ app.whenReady().then(() => {
 });
 
 app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') app.quit()
+    if (process.platform !== 'darwin') app.quit();
 });
 
