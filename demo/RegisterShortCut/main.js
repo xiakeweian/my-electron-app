@@ -10,7 +10,13 @@ app.on('ready', () => {
         mainWindow.loadURL('https://www.baidu.com');
     });
     let isRegister = globalShortcut.isRegistered('Alt+CommandOrControl+I') ? 'Success' : 'Fail';
-    console.log('------>' + isRegister)
+    console.log('------>' + isRegister);
+    mainWindow.webContents.on('before-input-event', (event, input) => {
+        if (input.control && input.key.toLowerCase() === 'i') {
+          console.log('Pressed Control+I')
+          event.preventDefault();
+        }
+      })
     mainWindow.on('close', () => {
         mainWindow = null;
     })
