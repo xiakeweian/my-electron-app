@@ -1,0 +1,14 @@
+{
+  "name": "register-short-cut",
+  "version": "1.0.0",
+  "description": " register short cut",
+  "main": "main.js",
+  "author": "xiakeweian",
+  "license": "MIT",
+  "scripts":{
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^29.1.0"
+  }
+}
